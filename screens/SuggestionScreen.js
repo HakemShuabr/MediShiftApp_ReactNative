@@ -6,14 +6,16 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {Header, Left, Right, Icon} from "native-base";
+import {Header, Left, Icon} from "native-base";
+import IconFontAwesome from "react-native-vector-icons/FontAwesome5";
 
-class MainScreen extends Component{
+class SuggestionScreen extends Component{
 
     static navigationOptions = {
-        drawerIcon : ({tintColor}) => (
-            <Icon name="home" style={{fontSize:24, color:tintColor}}/>
-        )
+        tabBarLabel: 'Suggestions',
+        tabBarIcon: ({tintColor}) => (
+            <IconFontAwesome name="pills" color={tintColor} size={24} />
+        ),
     };
 
     render() {
@@ -22,18 +24,18 @@ class MainScreen extends Component{
                 <Header>
                     <Left style={{flex:1}}>
                         <Icon name="menu" onPress={() =>
-                        this.props.navigation.openDrawer()} />
+                            this.props.navigation.openDrawer()} />
                     </Left>
                 </Header>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                    <Text>MainScreen</Text>
+                    <Text>Suggestions to be input here ...</Text>
                 </View>
             </View>
         );
     }
 }
 
-export default MainScreen;
+export default SuggestionScreen;
 
 const styles = StyleSheet.create({
     container: {

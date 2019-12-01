@@ -7,14 +7,14 @@ import {
 } from 'react-native';
 
 import {Header, Left, Icon} from "native-base";
-import IconFontAwesome from "react-native-vector-icons/FontAwesome";
+import IconFontAwesome from "react-native-vector-icons/FontAwesome5";
 
-class AnalyticScreen extends Component{
+class ReportScreen extends Component{
 
     static navigationOptions = {
-        tabBarLabel: 'Analysis',
+        tabBarLabel: 'Reports',
         tabBarIcon: ({tintColor}) => (
-            <IconFontAwesome name="bar-chart" color={tintColor} size={24} />
+            <IconFontAwesome name="file-medical-alt" color={tintColor} size={24} />
         ),
     };
 
@@ -28,14 +28,14 @@ class AnalyticScreen extends Component{
                     </Left>
                 </Header>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                    <Text>Data to be input here ...</Text>
+                    <Text>Report to be input here ...</Text>
                 </View>
             </View>
         );
     }
 }
 
-export default AnalyticScreen;
+export default ReportScreen;
 
 const styles = StyleSheet.create({
     container: {

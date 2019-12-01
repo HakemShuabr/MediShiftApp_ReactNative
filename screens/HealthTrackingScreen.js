@@ -7,14 +7,14 @@ import {
 } from 'react-native';
 
 import {Header, Left, Icon} from "native-base";
-import IconFontAwesome from "react-native-vector-icons/FontAwesome";
+import IconFontAwesome from "react-native-vector-icons/FontAwesome5";
 
-class AnalyticScreen extends Component{
+class HealthTrackingScreen extends Component{
 
     static navigationOptions = {
-        tabBarLabel: 'Analysis',
+        tabBarLabel: 'Health Tracking',
         tabBarIcon: ({tintColor}) => (
-            <IconFontAwesome name="bar-chart" color={tintColor} size={24} />
+            <IconFontAwesome name="file-contract" color={tintColor} size={24} />
         ),
     };
 
@@ -28,14 +28,14 @@ class AnalyticScreen extends Component{
                     </Left>
                 </Header>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                    <Text>Data to be input here ...</Text>
+                    <Text>Health Tracking to be input here ...</Text>
                 </View>
             </View>
         );
     }
 }
 
-export default AnalyticScreen;
+export default HealthTrackingScreen;
 
 const styles = StyleSheet.create({
     container: {

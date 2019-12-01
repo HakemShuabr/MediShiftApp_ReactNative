@@ -1,9 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image,  SafeAreaView, ScrollView, Dimensions} from 'react-native';
 import {createDrawerNavigator, DrawerItems} from 'react-navigation'
-import MainScreen from './screens/MainScreen'
+import HomeScreen from './screens/HomeScreen'
 import SettingsScreen from './screens/SettingsScreen'
-import AnalyticScreen from './screens/AnalyticScreen'
 
 
 // const {width} = Dimensions.get('window');
@@ -27,13 +26,8 @@ const CustomDrawerComponent = (props) => (
 );
 
 const AppDrawerNavigator = createDrawerNavigator({
-    Screen1 : {
-        Home: MainScreen,
-        Analytics: AnalyticScreen,
-    },
-    Screen2 : {
-        Settings: SettingsScreen,
-    }
+    Home: HomeScreen,
+    Settings: SettingsScreen
 }, {
     contentComponent: CustomDrawerComponent,
     contentOptions: {
