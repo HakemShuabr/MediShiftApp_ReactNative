@@ -48,6 +48,7 @@ const HomeScreen = createMaterialBottomTabNavigator({
     HealthTracking: HealthTrackingScreen,
     Report: ReportScreen,
 }, {
+    swipeEnabled: 'true',
     activeTintColor: 'red',
     inactiveTintColor: 'grey',
     barStyle: {backgroundColor: 'white'}
@@ -57,6 +58,7 @@ HomeScreen.navigationOptions = {
     drawerIcon: ({tintColor}) => (
         <Icon name="home" style={{fontSize:24, color: tintColor}} />
     ),
+
 };
 
 export default HomeScreen;
