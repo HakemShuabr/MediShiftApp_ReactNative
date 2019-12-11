@@ -8,9 +8,25 @@ import {
 
 import {Header, Left, Icon} from "native-base";
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
-import IconFontAwesome from "react-native-vector-icons/FontAwesome";
+import IconFontAwesome from "react-native-vector-icons/FontAwesome5";
+import { FloatingAction } from "react-native-floating-action";
 
 
+class AnalyticFloatingAction extends Component {
+
+    render() {
+        return(
+            <FloatingAction
+                ref={(ref) => { this.floatingAction = ref; }}
+                actions={actions}
+                onPressItem={name => {
+                    console.log(`selected button: ${name}`);
+                }}
+                floatingIcon={<IconFontAwesome name="ellipsis-h" color={"white"} size={24} />}
+            />
+        )
+    }
+}
 class DemographicDataInputScreen extends Component{
 
 
@@ -26,6 +42,7 @@ class DemographicDataInputScreen extends Component{
                 </Header>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                     <Text>Demographic Data to be input here ...</Text>
+                    <AnalyticFloatingAction/>
                 </View>
             </View>
         );
@@ -53,6 +70,7 @@ class HealthDataInputScreen extends Component{
                 </Header>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                     <Text>Health Related Data to be input here ...</Text>
+                    <AnalyticFloatingAction/>
                 </View>
             </View>
         );
@@ -76,6 +94,7 @@ class LifestyleDataInputScreen extends Component{
                 </Header>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                     <Text>Lifestyle Data to be input here ...</Text>
+                    <AnalyticFloatingAction/>
                 </View>
             </View>
         );
@@ -101,9 +120,24 @@ const AnalyticScreen = createMaterialTopTabNavigator({
 AnalyticScreen.navigationOptions = {
     tabBarLabel: 'Analysis',
     tabBarIcon: ({tintColor}) => (
-        <IconFontAwesome name="bar-chart" color={tintColor} size={24} />
+        <IconFontAwesome name="chart-bar" color={tintColor} size={24} />
     ),
 };
+
+const actions = [
+    {
+        text: "Diagnosis",
+        icon: <IconFontAwesome name="poll" color={"black"} size={20}/>,
+        name: "bt_result",
+        position: 1
+    },
+    {
+        text: "Reset Inputs",
+        icon: <IconFontAwesome name="trash-alt" color={"red"} size={20}/>,
+        name: "bt_reset",
+        position: 2
+    },
+];
 
 export default AnalyticScreen;
 
