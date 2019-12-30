@@ -45,7 +45,7 @@ const HomeScreen = createMaterialBottomTabNavigator({
     YourHealth: YourHealthScreen,
     Analytics: AnalyticScreen,
     Suggestion: SuggestionScreen,
-    HealthTracking: HealthTrackingScreen,
+    // HealthTracking: HealthTrackingScreen,
     Report: ReportScreen,
 }, {
     swipeEnabled: 'true',

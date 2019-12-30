@@ -12,7 +12,7 @@ import IconFontAwesome from "react-native-vector-icons/FontAwesome5";
 class HealthTrackingScreen extends Component{
 
     static navigationOptions = {
-        tabBarLabel: 'Health Tracking',
+        tabBarLabel: 'History',
         tabBarIcon: ({tintColor}) => (
             <IconFontAwesome name="file-contract" color={tintColor} size={24} />
         ),
